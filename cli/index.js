@@ -24,7 +24,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
       const contacts = await listContacts();
-      // return await listContacts();
       console.table(contacts);
       break;
 
@@ -43,14 +42,14 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       const newContact = await addContact(name, email, phone);
       console.log(chalk.green("Add new contact"));
       console.log(newContact);
-      return newContact;
-    //   break;
+      // return newContact;
+      break;
 
     case "remove":
       const deleteContact = await removeContact(id);
       console.log(deleteContact);
-      return deleteContact;
-    //   break;
+      // return deleteContact;
+      break;
     default:
       console.warn(chalk.red("Unknown action type!"));
   }
